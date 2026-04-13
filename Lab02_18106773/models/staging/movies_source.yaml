@@ -1,0 +1,20 @@
+version 2:
+
+sources:
+  - name: movies_sources
+    database: postgres
+    schema: tmdb
+    description: "Camada silver da tabela movies"
+
+    tables:
+      - name: movies
+        description: "Tabela movies"
+        columns:
+          - name: movie_id
+            description: "Identificador da filme"
+            tests:
+              - not_null
+          - name: vote_average
+            description: "Media de notas"
+            tests:
+              - not_null
